@@ -1,0 +1,52 @@
+<h1 class="createProfileForm">Create Profile</h1>
+<form class="createProfileForm" [formGroup]="createProfileForm" (ngSubmit)="createProfile()">
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>First name</mat-label>
+      <input formControlName="firstName" matInput placeholder="Placeholder">
+      <mat-error *ngIf="createProfileForm.get('firstName')?.invalid">{{getErrorMessage('firstName')}}</mat-error>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Last name</mat-label>
+      <input formControlName="lastName" matInput placeholder="Placeholder">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" type="email" matInput placeholder="Placeholder">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Description</mat-label>
+      <input formControlName="description" matInput placeholder="Placeholder">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Password</mat-label>
+      <input formControlName="password" type="password" matInput placeholder="Placeholder">
+    </mat-form-field>
+  </p>
+  <mat-form-field class="example-chip-list" appearance="fill">
+    <mat-label>Tags</mat-label>
+    <mat-chip-list #chipList aria-label="Tag selection">
+      <mat-chip *ngFor="let tag of tagsArray" (removed)="remove(tag)">
+        {{tag}}
+        <button matChipRemove>
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip>
+      <input placeholder="New tag..."
+             [matChipInputFor]="chipList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+  </mat-form-field>
+  <div class="example-button-row">
+    <button [disabled]="!createProfileForm.valid" mat-raised-button>Basic</button>
+  </div>
+</form>
