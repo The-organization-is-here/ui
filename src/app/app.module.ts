@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CardCheckModule} from "./modules/card-check/card-check.module";
 import {SharedModule} from "./modules/shared/shared.module";
-import {ContactsModule} from "./modules/contancts/contacts.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ProfileModule} from "./modules/profile/profile.module";
+import {ContactsModule} from "./modules/contancts/contacts.module";
+import {JobModule} from "./modules/job/job.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {ProfileModule} from "./modules/profile/profile.module";
     SharedModule,
     ContactsModule,
     BrowserAnimationsModule,
-    ProfileModule
+    ProfileModule,
+    JobModule
   ],
   providers: [],
   bootstrap: [AppComponent]
