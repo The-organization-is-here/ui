@@ -18,7 +18,7 @@ export class ProfileService {
   }
 
   createProfile(profile: Profile): void {
-    this.http.post('http://localhost:3000/profile', profile, {
+    this.http.post('http://localhost:3000/api/profile', profile, {
       withCredentials: false,
       observe: 'body',
       responseType: 'text'

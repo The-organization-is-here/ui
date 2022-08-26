@@ -1,0 +1,18 @@
+<input type="text" [formControl]="searchControl" />
+
+<div>
+        <ng-container *ngIf="(areNoResultsFound); else results">
+            No Results found.
+        </ng-container>
+        <ng-template #results>
+            Got results
+            <ul>
+                <li *ngFor="let result of jobs">
+                    <job-description [jobName]="result.jobName"></job-description>
+                </li>
+            </ul>
+        </ng-template>
+    <ng-template #lessThanMinimumCharactersTyped>
+        Enter minimum 3 characters to start searching.
+    </ng-template>
+</div>

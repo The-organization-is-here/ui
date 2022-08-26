@@ -24,7 +24,6 @@ import { MatChipsModule } from "@angular/material/chips";
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
     MatFormFieldModule,
